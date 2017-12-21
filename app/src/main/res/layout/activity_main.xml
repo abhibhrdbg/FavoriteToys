@@ -5,11 +5,15 @@
     android:layout_height="match_parent"
     tools:context="com.abhibhr.favoritetoys.MainActivity">
 
+
+    <!--TODO (2) Add an id to the TextView with the value @+id/tv_toy_names    !done-->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
         android:textSize="20sp"
-        android:padding="16dp"/>
+        android:padding="16dp"
+        android:id="@+id/tv_toy_names"/>
 
 </FrameLayout>

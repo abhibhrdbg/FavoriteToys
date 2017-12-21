@@ -9,7 +9,7 @@
     <!--Add an id to the TextView with the value @+id/tv_toy_names    !done-->
 
     <!--Add a ScrollView around the TextView so you can scroll through the list of toys !done-->
-    <!--Make the width of the ScrollView match_parent and the height wrap_content   !done-->
+    <!--Make the width of the ScrollView match_parent and the height wrap_content    !done-->
 
     <ScrollView
         android:layout_width="match_parent"

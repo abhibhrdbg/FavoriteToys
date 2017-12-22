@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Favorite Toys</string>
+    <!--TODO (1) Add a string resource called search with the title "Search"-->
+    <string name="search">Search</string>
 </resources>

@@ -6,25 +6,28 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Declare a TextView variable called mToysListTextView    !done
-    TextView mToysListTextView;
+
+    // TODO (26) Create an EditText variable called mSearchBoxEditText
+    TextView mSearchBoxEditText;
+
+    // TODO (27) Create a TextView variable called mUrlDisplayTextView
+    TextView mUrlDisplayTextView;
+    // TODO (28) Create a TextView variable called mSearchResultsTextView
+    TextView mSearchResultTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Use findViewById to get a reference to the TextView from the layout   !done
-        mToysListTextView = findViewById(R.id.tv_toy_names);
+        // TODO (29) Use findViewById to get a reference to mSearchBoxEditText
+        mSearchBoxEditText = findViewById(R.id.et_search_box);
 
-        //Use the static ToyBox.getToyNames method and store the names in a String array    !done
-        String toyNames[] = ToyBox.getToyNames();
+        // TODO (30) Use findViewById to get a reference to mUrlDisplayTextView
+        mUrlDisplayTextView = findViewById(R.id.tv_url_display);
+        // TODO (31) Use findViewById to get a reference to mSearchResultsTextView
+        mSearchResultTextView = findViewById(R.id.tv_github_search_result_json);
 
-        //Loop through each toy and append the name to the TextView (add \n for spacing)    !done
-        for (String toyName: toyNames) {
-            mToysListTextView.append(toyName+"\n\n\n");
-
-        }
 
     }
 }

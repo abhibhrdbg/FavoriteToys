@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.abhibhr.favoritetoys.utilities.NetworkUtils;
 
+import java.io.IOException;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,13 +33,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // TODO (2) Create a method called makeGithubSearchQuery
-    // TODO (3) Within this method, build the URL with the text from the EditText and set the built URL to the TextView
 
     void makeGithubSearchQuery(){
         String githubQueryString = mSearchBoxEditText.getText().toString();
         URL githubSearchUrl = NetworkUtils.buildUrl(githubQueryString);
         mUrlDisplayTextView.setText(githubSearchUrl.toString());
+        // TODO (2) Call getResponseFromHttpUrl and display the results in mSearchResultsTextView
+        String gitHubSearchResults = null;
+        try{
+            gitHubSearchResults = NetworkUtils.getResponseFromHttpUrl(githubSearchUrl);
+            mSearchResultTextView.setText(gitHubSearchResults);
+
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        // TODO (3) Surround the call to getResponseFromHttpUrl with a try / catch block to catch an IOException
+
     }
 
     @Override
@@ -50,8 +60,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         int menuItemThatWasSelected = item.getItemId();
         if(menuItemThatWasSelected == R.id.action_search){
-            // TODO (4) Remove the Toast message when the search menu item is clicked
-            Context context = MainActivity.this;
+              Context context = MainActivity.this;
             makeGithubSearchQuery();
             return true;
         }
